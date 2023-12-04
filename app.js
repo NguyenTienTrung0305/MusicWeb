@@ -42,6 +42,67 @@ const songs = [
 //     element.getElementsByTagName('h5')[0].innerHTML = songs[i].songname;
 // })
 
+
+const albums = [
+    {
+        id:'1',
+        songAlbum: `Sky Tour <div class="detail">Sơn Tùng MTP</div>`,
+        posterAlbum: 'img/1.jpg'
+    },
+    {
+        id:'2',
+        songAlbum: `Reputation <div class="detail">Taylor Swift</div>`,
+        posterAlbum: 'img/2.jpg'
+    },
+    {
+        id:'3',
+        songAlbum: `Star Boy <div class="detail">The Weeknd</div>`,
+        posterAlbum: 'img/3.jpg'
+    },
+    {
+        id:'4',
+        songAlbum: `Born Pink <div class="detail">Blacpink</div>`,
+        posterAlbum: 'img/4.jpg'
+    },
+    {
+        id:'5',
+        songAlbum: `Views <div class="detail">Drake</div>`,
+        posterAlbum: 'img/5.jpg'
+    },
+    {
+        id:'6',
+        songAlbum: `Freedom <div class="detail">Justin Bieber</div>`,
+        posterAlbum: 'img/6.jpg'
+    },
+    {
+        id:'7',
+        songAlbum: `Superache <div class="detail">Conan Gray</div>`,
+        posterAlbum: 'img/7.jpg'
+    },
+    {
+        id:'8',
+        songAlbum: `Sour <div class="detail">Olivia Rodrigo</div>`,
+        posterAlbum: 'img/8.jpg'
+    },
+    {
+        id:'9',
+        songAlbum: `Happier Than Ever <div class="detail">Billie Eilish</div>`,
+        posterAlbum: 'img/9.jpg'
+    },
+    {
+        id:'10',
+        songAlbum: `R <div class="detail">Rosie</div>`,
+        posterAlbum: 'img/10.jpg'
+    }
+]
+
+Array.from(document.getElementsByClassName("albumItem")).forEach((element , i)=>{
+    element.getElementsByTagName('img')[0].src = albums[i].posterAlbum;
+    element.getElementsByTagName('h5')[0].innerHTML = albums[i].songAlbum;
+})
+
+
+
 let playMusic = document.getElementById('playMusic');
 let wave = document.getElementsByClassName('wave')[0];
 
