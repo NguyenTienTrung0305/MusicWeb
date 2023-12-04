@@ -71,7 +71,7 @@
                     <h5>
                         Love Story
                         <div class="subtitle">Taylor Swift</div>
-                        <i class="fa-regular fa-circle-play" id="1" style="color: #ffffff;"></i>
+                        <i class="fa-regular recommendedPlay fa-circle-play" id="1" style="color: #ffffff;"></i>
                     </h5>
 
                 </li>
@@ -81,7 +81,7 @@
                     <h5>
                         Die for you
                         <div class="subtitle">The Weeknd</div>
-                        <i class="fa-regular fa-circle-play" id="2" style="color: #ffffff;"></i>
+                        <i class="fa-regular recommendedPlay fa-circle-play" id="2" style="color: #ffffff;"></i>
                     </h5>
 
                 </li>
@@ -91,7 +91,7 @@
                     <h5>
                         Hãy Trao Cho Anh
                         <div class="subtitle">Sơn Tùng MTP</div>
-                        <i class="fa-regular fa-circle-play" id="3" style="color: #ffffff;"></i>
+                        <i class="fa-regular recommendedPlay fa-circle-play" id="3" style="color: #ffffff;"></i>
                     </h5>
 
                 </li>
@@ -101,7 +101,7 @@
                     <h5>
                         What do you mean?
                         <div class="subtitle">Justin</div>
-                        <i class="fa-regular fa-circle-play" id="4" style="color: #ffffff;"></i>
+                        <i class="fa-regular recommendedPlay fa-circle-play" id="4" style="color: #ffffff;"></i>
                     </h5>
 
                 </li>
@@ -233,6 +233,7 @@
                     var prev = document.getElementById("prev");
                     var next = document.getElementById("next");
                     var albumItem = document.getElementsByClassName("albumItem");
+                    var albums_dis = document.getElementsByClassName('albums_dis')[0];
 
                     let i = 0;
 
@@ -242,6 +243,7 @@
                             albumItem[i].classList.remove("active");
                             i++;
                         }
+                        albums_dis.scrollLeft += 120;
 
                     }
 
@@ -249,9 +251,10 @@
                         if (i > 0) {
                             albumItem[i - 1].classList.add("active");
                             albumItem[i].classList.remove("active");
+                            
                             i--;
                         }
-
+                        albums_dis.scrollLeft -= 120;
                     }
 
                     document.addEventListener('keydown', function (event) {
@@ -273,52 +276,52 @@
             <div class="activity">
                 <div class="recently">
                     <h1>Recently Played</h1>
-                    <li class="song_item">
+                    <li class="song_item2">
                         <span>01</span>
                         <img src="img/taylor.jpg" alt="Taylor Swift">
                         <h5>
                             Love Story
                             <div class="subtitle">Taylor Swift</div>
-                            <i class="fa-regular fa-circle-play" id="1" style="color: #ffffff;"></i>
+                            <i class="fa-regular recentlyPlay fa-circle-play" id="1" style="color: #ffffff;"></i>
                         </h5>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item2">
                         <span>02</span>
                         <img src="img/theweeknd.jpg" alt="The Weeknd">
                         <h5>
                             Die for you
                             <div class="subtitle">The Weeknd</div>
-                            <i class="fa-regular fa-circle-play" id="2" style="color: #ffffff;"></i>
+                            <i class="fa-regular recentlyPlay fa-circle-play" id="2" style="color: #ffffff;"></i>
                         </h5>
 
                     </li>
-                    <li class="song_item">
+                    <li class="song_item2">
                         <span>03</span>
                         <img src="img/sontung.jpg" alt="Sơn Tùng MTP">
                         <h5>
                             Hãy Trao Cho Anh
                             <div class="subtitle">Sơn Tùng MTP</div>
-                            <i class="fa-regular fa-circle-play" id="3" style="color: #ffffff;"></i>
+                            <i class="fa-regular recentlyPlay fa-circle-play" id="3" style="color: #ffffff;"></i>
                         </h5>
 
                     </li>
-                    <li class="song_item">
+                    <li class="song_item2">
                         <span>04</span>
                         <img src="img/justin.jpg" alt="Justin Bieber">
                         <h5>
                             What do you mean?
                             <div class="subtitle">Justin</div>
-                            <i class="fa-regular fa-circle-play" id="4" style="color: #ffffff;"></i>
+                            <i class="fa-regular recentlyPlay fa-circle-play" id="4" style="color: #ffffff;"></i>
                         </h5>
 
                     </li>
-                    <li class="song_item">
+                    <li class="song_item2">
                         <span>05</span>
                         <img src="img/theweeknd.jpg" alt="The Weeknd">
                         <h5>
                             Die for you
                             <div class="subtitle">The Weeknd</div>
-                            <i class="fa-regular fa-circle-play" id="5" style="color: #ffffff;"></i>
+                            <i class="fa-regular recentlyPlay fa-circle-play" id="5" style="color: #ffffff;"></i>
                         </h5>
 
                     </li>
@@ -335,17 +338,17 @@
                 <div class="wave1"></div>
             </div>
 
-            <img src="img/taylor.jpg" alt="Taylor">
-            <h5>
+            <img src="img/taylor.jpg" alt="Taylor" id="posterMasterPlay">
+            <h5 id="titleMaster">
                 Love Story
                 <div class="subtitle">Taylor Swift</div>
 
             </h5>
             <div class="icon">
                 <i class="bi bi-share-fill"></i>
-                <i class="bi bi-skip-start-fill"></i>
-                <i class="fa-regular fa-circle-play"></i>
-                <i class="bi bi-skip-end-fill"></i>
+                <i class="bi bi-skip-start-fill" id="prevMusic"></i>
+                <i class="bi bi-play-fill" id="playMusic"></i>
+                <i class="bi bi-skip-end-fill" id="nextMusic"></i>
                 <i class="bi bi-repeat"></i>
 
             </div>
@@ -358,10 +361,10 @@
             </div>
             <span id="currentEnd">0:00</span>
             <div class="volume">
-                <i class="bi bi-volume-down-fill"></i>
+                <i class="bi bi-volume-down-fill" id="vol_icon"></i>
                 <input type="range" id="volume" min="0" value="30" max="100">
-                <div class="vol_bar"></div>
-                <div class="dot"></div>
+                <div class="vol_bar" id="vol_bar"></div>
+                <div class="dot" id="vol_dot"></div>
             </div>
         </div>
     </header>

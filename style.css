@@ -118,8 +118,7 @@ header .menu_side .menu a {
 
 header .menu_side .menu .menu_active {
     width: max-content;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px 5px 5px 5px;
     background-color: #9ca1ae;
     border-radius: 6px;
     transition: .3s linear;
@@ -170,6 +169,7 @@ header .menu_side .menu_song li span {
 header .menu_side .menu_song li img {
     width: 42px;
     height: 32px;
+    object-fit: cover; /* Khien anh dung ti le , khong bi meo*/
     margin-left: 20px;
 }
 
@@ -273,6 +273,7 @@ header .master_play .active_wave .wave1:nth-child(3) {
 header .master_play img {
     width: 42px;
     height: 32px;
+    object-fit: cover;
     margin-left: 5px;
 }
 
@@ -345,6 +346,7 @@ header .master_play .bar .bar2 {
     width: 0%;
     height: 100%;
     top: 0;
+    transition: 0.5s linear;
 }
 
 header .master_play .bar .dot {
@@ -355,7 +357,7 @@ header .master_play .bar .dot {
     border-radius: 50%;
     left: 0%;
     top: -1.3px;
-    transition: 1s linear;
+    transition: 0.5s linear;
 }
 
 header .master_play .bar .dot::before {
@@ -414,6 +416,7 @@ header .master_play .volume .vol_bar {
     width: 0%;
     height: 100%;
     top: 0;
+    transition: 0.5s linear;
 }
 
 header .master_play .volume .dot {
@@ -422,9 +425,9 @@ header .master_play .volume .dot {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    left: 0%;
+    left: 30%;
     top: -1.3px;
-    transition: 1s linear;
+    transition: 0.5s linear;
 }
 
 header .master_play .volume .dot::before {
@@ -466,7 +469,7 @@ header .song_side .nav .search::before {
     opacity: 0.1;
     backdrop-filter: blur(5px);
     /*sử dụng để áp dụng hiệu ứng mờ (blur) cho phần nền của một phần tử, đồng thời làm mờ phần tử và nội dung bên trong nó.*/
-    /* z-index: -1; */
+    z-index: -1;
 }
 
 header .song_side .nav .search i {
@@ -479,12 +482,14 @@ header .song_side .nav .search input {
     outline: none;
     border: none;
     padding: 0px 10px;
+    color: #fff;
 }
 
 header .song_side .nav img {
     position: absolute;
     width: 42px;
     height: 42px;
+    object-fit: cover;
     cursor: pointer;
     right: 20px;
 }
@@ -507,6 +512,7 @@ header .song_side .popular_artist img {
     margin: 10px 10px 0px 20px;
     width: 40%;
     height: 70%;
+    object-fit: cover;
     border-radius: 5%;
     /* border: 1px solid #fff; */
 }
@@ -623,6 +629,7 @@ header .song_side .popular_albums .albums_dis li .albumsPlay {
 header .song_side .popular_albums .albums_dis li .albumsPlay img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 
@@ -634,9 +641,9 @@ header .song_side .popular_albums .albums_dis li .albumsPlay i {
     opacity: 0;
 }
 
-header .song_side .popular_albums .albums_dis li .albumsPlay:hover i {
+/* header .song_side .popular_albums .albums_dis li .albumsPlay:hover i {
     opacity: 1;
-}
+} */
 
 header .song_side .popular_albums .albums_dis li h5 {
     text-align: center;
@@ -710,6 +717,7 @@ header .song_side .activity .recently li span {
 header .song_side .activity .recently li img {
     width: 42px;
     height: 32px;
+    object-fit: cover;
     margin-left: 20px;
 }
 
@@ -742,6 +750,7 @@ header .song_side .activity .recreational {
 
 header .song_side .activity .recreational img {
     width: 300px;
+    object-fit: cover;
     height: fit-content;
     border-radius: 5%;
 }
